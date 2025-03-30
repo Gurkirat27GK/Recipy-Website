@@ -3,54 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe Website</title>
+    <title>Recipe Sharing App</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
+
     <header>
-        <h1>Recipe Hub</h1>
+        <h1>Recipe Sharing App</h1>
         <nav>
-            <a href="#">Home</a>
-            <a href="#">Add Recipe</a>
-            <a href="#">View Recipe</a>
+            <ul>
+                <li><a href="#" id="home-link">Home</a></li>
+                <li><a href="#" id="add-recipe-link">Add Recipe</a></li>
+                <li><a href="#" id="view-recipes-link">View Recipes</a></li>
+                <li><button id="dark-mode-toggle">🌙 Dark Mode</button></li>
+            </ul>
         </nav>
     </header>
 
-    <br><br>
-    <section>
-        <h2>Add a new Recipe</h2>
-        <form>
-            <label>Recipe Name: </label>
-            <input type="text" name="text" required>
-            <br><br>
-            <label>Ingredients: </label>
-            <textarea type="text" name="text" required></textarea>
-            <br><br>
-            <label>Category: </label>
-            <select>
-                <option>Breakfast</option>
-                <option>Lunch</option>
-                <option>Dinner</option>
-                <option>Dessert</option>
-                <option>Drinks</option>
+    <main>
+        <section id="add-recipe-section" class="hidden">
+            <h2>Add New Recipe</h2>
+            <form id="recipe-form">
+                <label for="recipe-name">Recipe Name:</label>
+                <input type="text" id="recipe-name" required>
+
+                <label for="ingredients">Ingredients (comma-separated):</label>
+                <textarea id="ingredients" required></textarea>
+
+                <label for="category">Category:</label>
+                <select id="category" required>
+                    <option value="Breakfast">Breakfast</option>
+                    <option value="Lunch">Lunch</option>
+                    <option value="Dinner">Dinner</option>
+                    <option value="Dessert">Dessert</option>
+                    <option value="Drinks">Drinks</option>
+                </select>
+
+                <label for="steps">Preparation Steps:</label>
+                <textarea id="steps" required></textarea>
+
+                <button type="submit">Add Recipe</button>
+            </form>
+        </section>
+
+        <section id="view-recipes-section" class="hidden">
+            <h2>Recipes</h2>
+            <label for="filter-category">Filter by Category:</label>
+            <select id="filter-category">
+                <option value="All">All</option>
+                <option value="Breakfast">Breakfast</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Dinner">Dinner</option>
+                <option value="Dessert">Dessert</option>
+                <option value="Drinks">Drinks</option>
             </select>
-            <br><br>
-            <label>Preparation Steps: </label>
-            <textarea type="text" name="text" required></textarea>
-            <br><br>
-            <button type="submit">Submit</button>
-        </form>
-    </section>
+            <div id="recipes-container"></div>
+        </section>
+    </main>
 
-    <br><br>
-    <section>
-        <h1>Recipe List</h1>
-        <div class="rescipe-container" id="recipecontained"></div>
-    </section>
-    <footer>
-
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
