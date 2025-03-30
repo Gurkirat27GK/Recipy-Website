@@ -1,6 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+    color: #333;
+}
 
+header {
+    background: linear-gradient(to right, #f2ab06, #ee6840);
+    padding: 15px;
+    text-align: center;
+    color: white;
+}
 
-header{
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 15px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
     display: block;
+    font-weight: bold;
+    margin-top: 10px;
+}
 
+form input, form select, form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    background: #ff5722;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #e64a19;
+}
+
+#recipes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.recipe-card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.recipe-card table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.recipe-card table th, .recipe-card table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.dark-mode {
+    background: #222;
+    color: white;
+}
+
+.dark-mode form, .dark-mode .recipe-card {
+    background: #333;
+    color: white;
+}
+
+.dark-mode button {
+    background: #555;
 }
